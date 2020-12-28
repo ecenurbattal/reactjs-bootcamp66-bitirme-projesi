@@ -9,7 +9,7 @@ const SignOut = () => {
     }
     return (
         <Wrapper>
-            <a style={{fontFamily:'Sedgwick Ave, cursive', fontSize:'22px'}} onClick={handleSignOutClick} href="/">Çıkış Yap</a>
+            <a onClick={handleSignOutClick} href="/">Çıkış Yap</a>
         </Wrapper>
     )
 }

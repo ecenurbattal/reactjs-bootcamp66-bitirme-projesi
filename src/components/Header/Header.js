@@ -1,14 +1,15 @@
 import React, { useContext } from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import {routes} from '../../config/Router';
-import {Wrapper, Title, LeftMenu, RightMenu, InlineContainer} from './Header.styles';
+import {Wrapper, Title, Menu, InlineContainer} from './Header.styles';
 import Cart from '../Cart/Cart';
 import SessionContext from '../../contexts/SessionContext';
 import SignOut from '../SignOut/SignOut';
+import DrawerToggleButton from '../SideDrawer/DrawerToggleButton';
 
 
 
-const Header = () => {
+const Header = ({drawerClickHandler}) => {
     const {isAuthenticated} = useContext(SessionContext)
     const history = useHistory();
     const handleTitleClick = () => {
@@ -18,33 +19,33 @@ const Header = () => {
         <Wrapper>
             <Title onClick={handleTitleClick}>ComWorld</Title>
             <InlineContainer>
-            <LeftMenu>
-                {routes.filter((route) => !!route.isLink)
-                    .map((route) => (
-                        <li key={`route-${route.title}`}>
-                            <Link to={route.path}>{route.title}</Link>
+                <Menu margin="0">
+                    {routes.filter((route) => !!route.isLink)
+                        .map((route) => (
+                            <li key={`route-${route.title}`}>
+                                <Link to={route.path}>{route.title}</Link>
+                            </li>
+                        ))
+                    }
+                </Menu>
+                <Menu display="none" margin="auto">
+                    {!isAuthenticated ? (
+                    <>
+                        <li>
+                            <Link to='/login'>Giriş Yap</Link>
                         </li>
-                    ))
-                }
-            </LeftMenu>
-            <RightMenu>
-                {!isAuthenticated ? (
-                <>
-                <li style={{listStyleType:"none",textAlign:"right"}}>
-                <Link to='/login'>Giriş Yap</Link>
-                </li>
-                <li style={{listStyleType:"none",textAlign:"right"}}>
-                <Link to='/register'>Kayıt Ol</Link>
-                </li>
-                </>
-                ) : (
-                <>
-                    <Cart/>
-                    <SignOut/>
-                </>
-                )}
-            </RightMenu>
-            
+                        <li>
+                            <Link to='/register'>Kayıt Ol</Link>
+                        </li>
+                        </>
+                    ) : (
+                    <>
+                        <Cart/>
+                        <SignOut/>
+                    </>
+                    )}
+                </Menu>
+                <DrawerToggleButton onClick={drawerClickHandler}/>
             </InlineContainer>
             
         </Wrapper>

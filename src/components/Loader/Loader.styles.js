@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
 `
 
 export const Item = styled.p`
-    font-size:100px;
+    font-size:3rem;
     font-weight:900;
     color:#d3d3d3;
 `

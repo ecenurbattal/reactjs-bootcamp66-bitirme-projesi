@@ -9,11 +9,24 @@ import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 
 import { useState } from 'react';
+import SideDrawer from './components/SideDrawer/SideDrawer';
+import Backdrop from './components/Backdrop/Backdrop';
 
 function App() {
   const [isAuthenticated, setAuthenticated] = useState(false);
   const [user, setUser] = useState({});
   const [cart, updateCart] = useState([]);
+
+  const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
+
+  const drawerToggleClickHandler = () => {
+    setSideDrawerOpen((prevState) => !prevState)
+  }
+
+  const backdropClickHandler = () => {
+    setSideDrawerOpen(false)
+  }
+
   return (
         <SessionContext.Provider
           value={{
@@ -30,7 +43,9 @@ function App() {
               }}
             >
                 <Container>
-                <Header />
+                <Header drawerClickHandler={drawerToggleClickHandler} />
+                <SideDrawer show={sideDrawerOpen}/>
+                {sideDrawerOpen && <Backdrop onClick={backdropClickHandler}/>}
                 <Content />
                 <Footer />
               </Container>

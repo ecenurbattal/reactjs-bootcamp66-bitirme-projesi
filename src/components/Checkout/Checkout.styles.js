@@ -22,8 +22,13 @@ export const ItemWrapper = styled.div`
     justify-content:space-between;
     margin-top:15px;
     background:#d3d3d3;
+    transition: 0.25s;
     &:hover {
         border: 3px solid black;
+        -webkit-transform: rotate(-3deg);
+        -moz-transform: rotate(-3deg);
+        -o-transform: rotate(-3deg);
+        transform: rotate(-3deg);
     }
 `
 

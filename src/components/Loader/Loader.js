@@ -4,7 +4,7 @@ import {Wrapper,Item} from './Loader.styles';
 const Loader = () => {
     return (
         <Wrapper>
-            <Item>Loading...</Item>
+            <Item>Yükleniyor...</Item>
         </Wrapper>
     )
 }

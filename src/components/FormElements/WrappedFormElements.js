@@ -15,7 +15,7 @@ export const FormContainer = styled.form`
 export const Box = styled.div`
   display: flex;
   align-items:center;
-  width: 500px;
+  width: 70%;
   height:450px;
   margin: auto;
   border: 1px solid #d3d3d3;

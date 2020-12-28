@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import CartContext from '../../contexts/CartContext';
 import useOutsideAlerter from '../../hooks/useOutsideAlerter';
@@ -24,6 +24,10 @@ const Cart = () => {
   const cartContentRef = useRef(null);
 
   const { cart, updateCart } = useContext(CartContext);
+
+  useEffect(() => {
+    if(cart.length) setContentOpen(true)
+  },[cart.length])
 
   useOutsideAlerter(cartContentRef, () => {
     if (isContentOpen) {

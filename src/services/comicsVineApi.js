@@ -1,7 +1,7 @@
 import axios from 'axios';
-
+//https://cors-anywhere.herokuapp.com/
 const instance = axios.create({
-    baseURL:'https://cors-anywhere.herokuapp.com/https://comicvine.gamespot.com/api',
+    baseURL:'https://comicvine.gamespot.com/api',
     headers:{ 'Access-Control-Allow-Origin': '*'},
     params: {
         api_key:'b1e1d27f0279baff924cb89c039596e6f7eb36ee',
@@ -21,7 +21,7 @@ export const getCharacters = () => {
 
 export const getCharacter = (url) => {
     return instance.get('/',{
-        baseURL:`https://cors-anywhere.herokuapp.com/${url}`,
+        baseURL:`${url}`,
         params: {
             field_list : 'id,team_enemies,team_friends,deck,gender,image,movies,name,origin,powers,publisher,real_name,teams,volume_credits',
         }

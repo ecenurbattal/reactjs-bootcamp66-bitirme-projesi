@@ -35,7 +35,7 @@ const Login = () => {
         history.push('/');
         setAuthenticated(true);
       } else {
-        setError('Wrong username or password');
+        setError('Kullanıcı adı veya parola yanlış.');
       }
     } catch(err){
       setError(err)

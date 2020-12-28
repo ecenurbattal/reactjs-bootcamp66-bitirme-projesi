@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-    text-align:right;
     & > a {
         color:#fff;
+        font-family: Sedgwick Ave, cursive;
+        font-size: 22px;
     }
-    margin-left:20px;
 `;

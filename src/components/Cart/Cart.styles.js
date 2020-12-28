@@ -6,8 +6,8 @@ export const Wrapper = styled.div`
 
 export const CartContent = styled.div`
   position: absolute;
-  top: 40px;
-  right: 0;
+  top: 125%;
+  right: 30%;
 
   display: flex;
   padding: 10px;

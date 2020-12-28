@@ -38,7 +38,7 @@ const Home = () => {
     }, [activeIndex]);
 
     return (
-        <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+        <div style={{display:"flex",justifyContent:"center",alignItems:"center",height:"60vh"}}>
             <Tabs
             tabs={initialTabs}
             activeIndex={activeIndex}

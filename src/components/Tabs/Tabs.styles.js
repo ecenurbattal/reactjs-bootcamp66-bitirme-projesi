@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   width:100%;
+  height: 100%;
 `;
 
 export const TabButtons = styled.div`
@@ -36,7 +37,7 @@ export const TabContent = styled.div`
   padding: 2em;
   margin-top: 10px;
   width: 100%;
-  height:35em;
+  height:100%;
   background: url(${(props) => props.bgImage});
   background-size:cover;
   background-repeat:no-repeat;
