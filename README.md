@@ -1,3 +1,7 @@
+# Netlify Linki
+[ComWorld](https://comworld.netlify.app)
+
+
 # Bitirme Ödevi
 
 Bu ödevde aşağıda belirtilen kriterleri karşılayan ve içerik konusunda serbest olduğunuz bir uygulama yapmanız isteniyor.
